@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <title>পায়েশখুর ফটো গ্যালারি</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Hind Siliguri', sans-serif; }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1e1e2f, #3a0ca3);
+      color: white;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      padding: 40px;
+      border-radius: 20px;
+      width: 420px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      transition: 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .card:hover { transform: translateY(-5px); }
+
+    h1 { font-size: 30px; font-weight: 700; margin-bottom: 8px; }
+    p { font-size: 14px; opacity: 0.85; margin-bottom: 22px; }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.14);
+      margin-bottom: 12px;
+      background: rgba(255,255,255,0.08);
+      color: white;
+      outline: none;
+    }
+    textarea { resize: none; }
+
+    input[type="file"] { cursor: pointer; }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: none;
+      background: #ff4d6d;
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover { background: #ff1e4d; transform: scale(1.03); }
+
+    .gallery-link {
+      display: block;
+      margin-top: 18px;
+      color: #ddd;
+      text-decoration: none;
+      transition: 0.3s ease;
+      font-weight: 600;
+    }
+
+    .gallery-link:hover { color: white; }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>পায়েশখুর ফটো গ্যালারি</h1>
+    <p>শুধু PayeshKhur মেম্বাররা ছবি আপলোড করতে পারবে 😄</p>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="text" name="title" placeholder="ছবির নাম (Title)">
+      <textarea name="description" rows="3" placeholder="ছবির বর্ণনা (Description)"></textarea>
+
+      <input type="password" name="member_key" placeholder="Member Key" required>
+      <input type="file" name="file" accept="image/*" required>
+
+      <button type="submit">Upload</button>
+    </form>
+
+    <a href="/gallery" class="gallery-link">Gallery দেখুন →</a>
+  </div>
+</body>
+</html>
